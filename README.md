@@ -1,23 +1,20 @@
-# BottomNavigationView demo
-Demo app for the new [BottomNavigationView](https://developer.android.com/reference/android/support/design/widget/BottomNavigationView.html) in Android Support library.
+Inspiration
+Have you ever wanted to meet up with friends over the weekend to play a little basketball but had plans ruined due to lack of communication? Our app tries to solve this problem by creating a platform for contacts to agree to plans without confusion. The process is quick and simple, as opposed to creating a new event on Facebook or having a group chat full of irrelevant information.
 
-Follow up blog post is here: https://segunfamisa.com/posts/bottom-navigation-view-android
+What it does
+The app allows users to manage events they've been invited to and to create their own events. When creating events, the user names the event, chooses a time, date, and location, and can choose friends by email address to invite. They can also add a small blurb to give details about the event if they wish. Once the event is created, all users listed as invitees are notified by text. From there, the user can check their list of coming events that they haven't responded to yet, and they can choose whether or not they can go or not. If they want to discuss it with the creator, there is a chat functionality.
 
-# Requirements
-  * Android Studio
-  * Android SDK & tools (version 25)
-    * Android SDK tools 25.X.Y
-    * Android Build-tools 25
-    * Android SDK Platform-tools 25
+How we built it
+We used Android Studio to lay down the framework of navigation and IO systems. We connected it to a Firebase database that stored user information and event information, which also transfers information to users when they are invited. User information stored includes their email, name, account ID, phone, as well as events they are going to and invited to. Event information includes name, location, time, date, the list of invited users, and the listed of going users. The users are authenticated using their Google accounts and are identified via email. We used the Google Maps API to assist in determining location when creating an event. The chat functionality was used by adapting Firebase's messaging program. The text notification functionality was created by using phone number information from Firebase and sending a text from your phone to the phones of those you invited.
 
-# Gif Demo
-![alt text](https://imgur.com/y0uv4tX.gif" "Demo app")
+Challenges we ran into
+For most of our members, this was our first experience with Android Studio and Firebase. One of the biggest challenges was implementing the navigation bar at the bottom, which required managing fragments, and we had trouble determining when exactly to attach or detach fragments. Another issue we faced were implementing the Maps functionality because we were unsure how to integrate it into our app's framework. Finally, we had trouble implementing the chat functionality because of how it interacted with both our app framework as well as getting user information from Firebase to communicate quickly.
 
-# Screenshots
-![alt text](screens.png "Screens")
+Accomplishments that we're proud of
+We managed successfully to put most of the features that we wanted into the app, even if it wasn't completely polished. Overall, because we didn't have a lot of the experience required to build an Android app beforehand, simply getting the app running and working well was an accomplishment we are proud of.
 
-# Contribution
-Contributions are welcome. Feel free to submit a pull request to contribute to this demo project.
+What we learned
+In general, all of us learned the basic workings of Android app development, which was our main goal coming into the creation of this app. We learned how to integrate various APIs and model other programs' code to fit our own purposes. We also learned the basics of how to store information on databases and how to retrieve it quickly.
 
-# License
-Apache v2.0
+What's next for MeetUp
+We're planning various other functionalities and modifications in the future. First, we want to allow attendees of an event to check the locations of other attendees to make sure they are all meeting at the same place and ensure that they are all meeting at the same time. We also want to implement a feed that gives reminders about events that are coming up soon, recommends meet-ups at different places, times, and with different people based on previous meet-ups. We also want to make events modifiable by the creator, which would push new notifications to those who are identified, and possibly create a voting program where invitees can collectively decide on a date, time, or location. Finally, we want to implement a better contacts list where event creators can choose invitees from a list instead of entering their emails or create groups of contacts that they get together with often (ex. basketball group, study group, etc).
